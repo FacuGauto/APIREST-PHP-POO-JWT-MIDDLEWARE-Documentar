@@ -11,6 +11,7 @@ class cdApi extends cd implements IApiUsable
     	return $newResponse;
     }
      public function TraerTodos($request, $response, $args) {
+        echo "sfsfsgsfsf";
       	$todosLosCds=cd::TraerTodoLosCds();
      	$newResponse = $response->withJson($todosLosCds, 200);  
     	return $newResponse;

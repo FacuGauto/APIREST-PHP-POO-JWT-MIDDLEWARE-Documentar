@@ -13,7 +13,11 @@ $app = new \Slim\App([]);
 $app->get('[/]', function (Request $request, Response $response) {    
     $response->getBody()->write("GET => Bienvenido!!! ,a SlimFramework");
     return $response;
+});
 
+$app->post('[/]', function (Request $request, Response $response) {    
+    $response->getBody()->write("POST => Bienvenido!!! ,a SlimFramework");
+    return $response;
 });
 
 

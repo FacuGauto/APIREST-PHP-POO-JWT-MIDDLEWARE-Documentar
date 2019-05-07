@@ -6,7 +6,6 @@ require '../composer/vendor/autoload.php';
 require '/clases/AccesoDatos.php';
 require '/clases/cdApi.php';
 
-
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
@@ -37,5 +36,13 @@ $app->group('/cd', function () {
   $this->put('/', \cdApi::class . ':ModificarUno');
      
 });
+/*$app->group('/login', function () {
+ 
 
+
+  $this->post('/', \cdApi::class . ':CargarUno');
+
+     
+});
+*/
 $app->run();
