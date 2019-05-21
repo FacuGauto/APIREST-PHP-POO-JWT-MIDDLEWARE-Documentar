@@ -7,14 +7,14 @@ class cdApi extends cd implements IApiUsable
  	public function TraerUno($request, $response, $args) {
      	$id=$args['id'];
     	$elCd=cd::TraerUnCd($id);
-     	$newResponse = $response->withJson($elCd, 200);  
-    	return $newResponse;
+     	//$newResponse = $response->withJson($elCd, 200);  
+        $response->getBody()->write("<h1>TraerUno</h1>");
+    	return $response;
     }
      public function TraerTodos($request, $response, $args) {
-        echo "sfsfsgsfsf";
       	$todosLosCds=cd::TraerTodoLosCds();
-     	$newResponse = $response->withJson($todosLosCds, 200);  
-    	return $newResponse;
+     	$response = $response->withJson($todosLosCds, 200);  
+    	return $response;
     }
       public function CargarUno($request, $response, $args) {
      	 $ArrayDeParametros = $request->getParsedBody();
@@ -31,12 +31,12 @@ class cdApi extends cd implements IApiUsable
 
         $archivos = $request->getUploadedFiles();
         $destino="./fotos/";
-        var_dump($archivos);
-        var_dump($archivos['foto']);
+        //var_dump($archivos);
+        //var_dump($archivos['foto']);
 
         $nombreAnterior=$archivos['foto']->getClientFilename();
         $extension= explode(".", $nombreAnterior)  ;
-        var_dump($nombreAnterior);
+        //var_dump($nombreAnterior);
         $extension=array_reverse($extension);
 
         $archivos['foto']->moveTo($destino.$titulo.".".$extension[0]);

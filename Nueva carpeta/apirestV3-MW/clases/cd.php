@@ -6,6 +6,8 @@ class cd
   	public $cantante;
   	public $año;
 
+
+
   	public function BorrarCd()
 	 {
 	 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 

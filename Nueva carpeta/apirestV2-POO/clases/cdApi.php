@@ -29,17 +29,17 @@ class cdApi extends cd implements IApiUsable
         $micd->año=$año;
         $micd->InsertarElCdParametros();
 
-        $archivos = $request->getUploadedFiles();
-        $destino="./fotos/";
-        var_dump($archivos);
-        var_dump($archivos['foto']);
+        //$archivos = $request->getUploadedFiles();
+        //$destino="./fotos/";
+        //var_dump($archivos);
+        //var_dump($archivos['foto']);
 
-        $nombreAnterior=$archivos['foto']->getClientFilename();
-        $extension= explode(".", $nombreAnterior)  ;
-        var_dump($nombreAnterior);
-        $extension=array_reverse($extension);
+        //$nombreAnterior=$archivos['foto']->getClientFilename();
+        //$extension= explode(".", $nombreAnterior)  ;
+        //var_dump($nombreAnterior);
+        //$extension=array_reverse($extension);
 
-        $archivos['foto']->moveTo($destino.$titulo.".".$extension[0]);
+        //$archivos['foto']->moveTo($destino.$titulo.".".$extension[0]);
         $response->getBody()->write("se guardo el cd");
 
         return $response;
